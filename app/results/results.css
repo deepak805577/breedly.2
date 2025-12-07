@@ -1,0 +1,196 @@
+
+   /* Base styles */
+body {
+  font-family: 'Fredoka', sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  background: transparent;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 1;
+}
+
+
+h1 {
+  color: #4e148c;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.slogan {
+  color: #5a4c4c;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.quote {
+  font-style: italic;
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* Dog card grid */
+.dog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Individual card */
+.dog-card {
+  background: #fff8f2;
+  padding: 20px;
+  border-radius: 16px;
+  width: 260px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.dog-card:hover {
+  transform: translateY(-5px);
+}
+
+.dog-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.dog-card h3 {
+  margin: 10px 0 6px;
+  color: #5a2a03;
+}
+
+.dog-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Button section */
+.btn-bar {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.restart-btn {
+  background: #f8a151;
+  color: white;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.restart-btn:hover {
+  background-color: #fd8f28;
+}
+
+.fallback {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 60px;
+}
+
+/* --------------------------- */
+/* 💡 RESPONSIVE BREAKPOINTS */
+/* --------------------------- */
+
+/* Tablets */
+@media (max-width: 991px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .dog-card {
+    width: 300px;
+    height: 420px;
+    padding: 18px;
+  }
+
+  .dog-card img {
+    height: 300px;
+  }
+
+  .restart-btn {
+    font-size: 0.95rem;
+    padding: 10px 24px;
+  }
+  .dog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  body {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .slogan {
+    font-size: 1rem;
+  }
+
+  .quote {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+
+  .dog-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 16px;
+  }
+
+  .dog-card img {
+    height: 200px;
+  }
+
+  .btn-bar {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .restart-btn {
+    width: 100%;
+    max-width: 260px;
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+
+  .fallback {
+    font-size: 0.95rem;
+    margin-top: 40px;
+  }
+}
