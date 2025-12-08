@@ -2,7 +2,6 @@
 'use client';
 import './breed-selector.css';
 import { useState } from 'react';
-import AuthWrapper from '../components/AuthWrapper';
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
