@@ -1,6 +1,5 @@
 // app/breeds/page.js
 "use client";
-
 import "./breeds.css";
 import { useState } from "react";
 import { breedCards } from "../data/breed"; // correct import

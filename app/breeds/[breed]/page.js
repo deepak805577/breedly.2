@@ -208,8 +208,9 @@ export default function BreedDetailPage() {
 
       {/* Back Links */}
       <div className="back-links">
-        <a href="/results" className="back-link">← Back to Matches</a>
+        <a href="/results" className="back-link">← Back to results</a>
         <a href="/breeds" className="back-link">← Back to All Breeds</a>
+
       </div>
 
       {/* Dog Quote */}
