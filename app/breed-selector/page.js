@@ -219,7 +219,7 @@ export default function BreedSelector() {
     if (!token) router.push("/login");  // redirect if no login
   }, []);
   return (
-    <AuthWrapper>
+    
     <div style={{ position: "relative", minHeight: "100vh" }}>
       {/* Background */}
       <div className="bg-image-wrapper">
@@ -282,6 +282,6 @@ export default function BreedSelector() {
         </div>
       </section>
     </div>
-   </AuthWrapper>  
+  
   );
 }
