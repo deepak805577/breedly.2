@@ -155,7 +155,7 @@
       margin-top: 20px;
       font-size: 0.9rem;
       color: #333;
-    }/* 📌 Tablets + Large Phones */
+    }/* 📌 Tablets + Large Phones *//* 📌 Tablets & Large Mobiles (≤ 768px) */
 @media screen and (max-width: 768px) {
   .quiz-header-banner h1 {
     font-size: 1.6rem;
@@ -169,12 +169,12 @@
   .quiz-container {
     padding: 20px;
     margin: 15px;
-    min-height: 90vh;
+    min-height: 30vh;
     border-radius: 16px;
   }
 
   .quiz-header h2 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     text-align: center;
   }
 
@@ -191,7 +191,7 @@
   }
 
   .option-circle span {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .option-circle p {
@@ -200,38 +200,43 @@
 
   .quiz-navigation {
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     align-items: stretch;
   }
 
   .nav-btn {
     width: 100%;
-    padding: 12px 18px;
+    padding: 12px 20px;
     font-size: 1rem;
   }
 
   .progress-bar {
-    width: 95%;
+    width: 92%;
   }
 
   .quiz-tip {
     font-size: 0.9rem;
+    text-align: center;
   }
 }
 
-/* 📱 Small Phones */
+/* 📱 Small Phones (≤ 400px) */
 @media screen and (max-width: 400px) {
   .quiz-header-banner h1 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .quiz-header-banner p {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
 
   .quiz-container {
-    padding: 15px;
-    margin: 10px;
+    padding: 14px;
+    margin: 8px;
+  }
+
+  .quiz-header h2 {
+    font-size: 1.15rem;
   }
 
   .option-circle {
@@ -240,53 +245,53 @@
   }
 
   .option-circle span {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   .option-circle p {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 
   .nav-btn {
-    padding: 10px 18px;
+    padding: 10px 16px;
     font-size: 0.85rem;
-  }
-
-  .quiz-header h2 {
-    font-size: 1.2rem;
   }
 
   .quote-bar {
     font-size: 0.75rem;
-    padding: 5px 10px;
+    padding: 4px 8px;
   }
 
   .quiz-summary {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 }
 
-/* 🟢 Ultra-small screens (iPhone SE / 320px) */
+/* 🟢 Ultra-small screens (≤ 320px / iPhone SE) */
 @media screen and (max-width: 320px) {
   .option-circle {
-    width: 80px;
-    height: 80px;
+    width: 78px;
+    height: 78px;
   }
 
   .option-circle span {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .option-circle p {
-    font-size: 0.65rem;
+    font-size: 0.63rem;
   }
 
   .nav-btn {
-    padding: 8px 14px;
-    font-size: 0.8rem;
+    padding: 8px 12px;
+    font-size: 0.78rem;
   }
 
   .quiz-header h2 {
     font-size: 1rem;
+  }
+
+  .quiz-header-banner p {
+    font-size: 0.65rem;
   }
 }
