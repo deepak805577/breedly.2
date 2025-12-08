@@ -214,10 +214,7 @@ export default function BreedSelector() {
   const q = questions[currentQuestion];
   const router = useRouter();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) router.push("/login");  // redirect if no login
-  }, []);
+  
   return (
     
     <div style={{ position: "relative", minHeight: "100vh" }}>
