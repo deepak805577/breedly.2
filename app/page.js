@@ -18,10 +18,10 @@ export default function Home() {
             </p>
 
             <div className="hero-buttons">
-              <a href="/pages/breed-details.html" className="btn1">
+              <a href="/breeds" className="btn1">
                 I Know My Breed
               </a>
-              <a href="/pages/quiz.html" className="btn2">
+              <a href="/breed-selector" className="btn2">
                 Help Me Choose
               </a>
             </div>
