@@ -5,9 +5,14 @@ import { breeds } from "../../data/breeds";
 
 export default function BreedDetailPage() {
   const params = useParams();
-  const breedName = decodeURIComponent(params.breed);
+  const breedName = decodeURIComponent(params.breed)
+    .replace(/-/g, " ")
+    .trim()
+    .toLowerCase();
 
-  const breed = breeds.find((b) => b.name === breedName);
+  const breed = breeds.find(
+    (b) => b.name.trim().toLowerCase() === breedName
+  );
 
   if (!breed) {
     return (
@@ -17,7 +22,6 @@ export default function BreedDetailPage() {
       </div>
     );
   }
-
   return (
     <div className="breed-detail-page">
       {/* Background */}
