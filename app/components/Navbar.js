@@ -1,66 +1,83 @@
-'use client';
-import { usePathname } from 'next/navigation';
+"use client";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   const pathname = usePathname();
 
   // Pages where the navbar should be hidden
-  const hidePages = ["/breed-selector", "/results","/breeds","/[breed]","/food-guide","/login","/training-guide"];
+  const hidePages = [
+    "/breed-selector",
+    "/results",
+    "/breeds",
+    "/[breed]",
+    "/food-guide",
+    "/login",
+    "/training-guide"
+  ];
+
   const hideNav = hidePages.includes(pathname);
 
-  if (hideNav) return null; // 🔥 Hide Navbar completely
-const handleLogout = () => {
-  localStorage.removeItem('token');
-  localStorage.removeItem('username');
-  window.location.href = "/login";
-};
+  if (hideNav) return null; // Hide Navbar completely
 
   return (
-    <nav className="navbar">
-      <div className="nav-left">
-        <img src="/assets/dog (2).png" alt="BreedLy Logo" className="logo-img" />
-        <div className="logo-text">
-          <h1>BreedLy 🐾</h1>
-          <span>Know about Paws</span>
+    <>
+      <nav className="navbar">
+        <div className="nav-left">
+          <img src="/assets/dog (2).png" alt="BreedLy Logo" className="logo-img" />
+          <div className="logo-text">
+            <h1>BreedLy 🐾</h1>
+            <span>Know about Paws</span>
+          </div>
         </div>
+
+        <ul className="nav-center">
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/breed-selector">Breed Selector</Link></li>
+          <li><Link href="/breeds">Breed Info</Link></li>
+          <li><Link href="/health-guide">Health</Link></li>
+          <li><Link href="/food-guide">Food</Link></li>
+          <li><Link href="/training-guide">Training</Link></li>
+          <li><Link href="/login">Register</Link></li>
+        </ul>
+
+        <div className="nav-right">
+          <Link href="/breeds" className="search-icon">🔎</Link>
+          <Link href="/login" className="btn-primary">🐶 Register</Link>
+        </div>
+      </nav>
+
+      {/* 🌟 Mobile Bottom Navigation */}
+      <div className="bottom-nav">
+        <Link href="/" className={pathname === "/" ? "active-bottom" : ""}>
+          <img src="/assets/icons/home.png" alt="Home" />
+          <span>Home</span>
+        </Link>
+
+        <Link href="/breed-selector" className={pathname === "/breed-selector" ? "active-bottom" : ""}>
+          <img src="/assets/icons/quiz.png" alt="Select" />
+          <span>Dog Selector</span>
+        </Link>
+
+        <Link href="/breeds" className={pathname === "/breeds" ? "active-bottom" : ""}>
+          <img src="/assets/icons/info.png" alt="Breeds" />
+          <span>Breeds</span>
+        </Link>
+
+        <Link href="/food-guide" className={pathname === "/food-guide" ? "active-bottom" : ""}>
+          <img src="/assets/icons/food.png" alt="Food" />
+          <span>Food Guide</span>
+        </Link>
+
+        <Link href="/login" className={pathname === "/health-guide" ? "active-bottom" : ""}>
+          <img src="/assets/icons/health.png" alt="Profile" />
+          <span>Profile</span>
+          </Link>  
+        <Link href="/login" className={pathname === "/training-guide" ? "active-bottom" : ""}>
+          <img src="/assets/icons/training.png" alt="Profile" />
+          <span>Profile</span>  
+        </Link>
       </div>
-
-      <ul className="nav-center" id="mobile-menu">
-        <li><a href="/login">Register</a></li>
-        <li><a href="/">Home</a></li>
-        <li><a href="/breed-selector">Breed Selector</a></li>
-        <li><a href="/breeds">Breed Info</a></li>
-        <li><a href="/health-guide">Health</a></li>
-        <li><a href="/food-guide">Food</a></li>
-        <li><a href="/training-guide">Training</a></li>
-        <li><a href="#">Contact</a></li>
-        
-      </ul>
-
-      <div className="nav-right">
-        <a href="/breeds" className="search-icon">🔎</a>
-        <a href="/login" className="btn-primary">🐶 Register</a>
-      </div>
-
-      <button className="hamburger" id="hamburger-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            document.addEventListener("DOMContentLoaded", function () {
-              const btn = document.getElementById("hamburger-btn");
-              const menu = document.getElementById("mobile-menu");
-              if (btn && menu) {
-                btn.addEventListener("click", () => menu.classList.toggle("show"));
-              }
-            });
-          `,
-        }}
-      />
-    </nav>
+    </>
   );
 }
