@@ -1,9 +1,18 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
+useEffect(() => {
+  const handleBack = () => {
+    window.location.reload(); // 🔥 Refresh when going back
+  };
+
+  window.addEventListener("popstate", handleBack);
+  return () => window.removeEventListener("popstate", handleBack);
+}, []);
 
   // Pages where the navbar should be hidden
   const hidePages = [
