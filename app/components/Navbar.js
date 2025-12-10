@@ -2,17 +2,36 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
-  const pathname = usePathname();
+  const pathname = usePathname();const router = useRouter();
+
 useEffect(() => {
-  const handleBack = () => {
-    window.location.reload(); // 🔥 Refresh when going back
+  let shouldRefresh = false;
+
+  // Detect BACK navigation
+  const onBack = () => {
+    shouldRefresh = true;
   };
 
-  window.addEventListener("popstate", handleBack);
-  return () => window.removeEventListener("popstate", handleBack);
-}, []);
+  // When screen becomes visible again (after back)
+  const onVisible = () => {
+    if (shouldRefresh && document.visibilityState === "visible") {
+      router.refresh();   // 🔥 More precise than reload()
+      shouldRefresh = false;
+    }
+  };
+
+  window.addEventListener("popstate", onBack);
+  document.addEventListener("visibilitychange", onVisible);
+
+  return () => {
+    window.removeEventListener("popstate", onBack);
+    document.removeEventListener("visibilitychange", onVisible);
+  };
+}, [router]);
+
 
   // Pages where the navbar should be hidden
   const hidePages = [
