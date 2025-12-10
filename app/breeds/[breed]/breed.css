@@ -128,6 +128,7 @@ nav, footer {
     }
 
     .video-section {
+      padding-bottom: 20px;
       position: relative;
       z-index: 2;
       margin-top: 40px;
@@ -198,14 +199,15 @@ nav, footer {
     }
     /* 🐶 Quote Banner */
 .dog-quote-banner {
-  background: #ffe6cc;
+  position: absolute;
+  margin: 0;
+  background: transparent;
   padding: 15px 10px;
-  text-align: center;
+  width: 100%;
   color: #8b4e1d;
   font-size: 1.3rem;
   font-family: 'Baloo 2', cursive;
   border-bottom: 3px dashed #ffcc99;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 
