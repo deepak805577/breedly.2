@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function Navbar() {
   const pathname = usePathname();
 
-  // Pages where navbar should be hidden
   const hidePages = [
     "/breed-selector",
     "/results",
@@ -16,12 +15,11 @@ export default function Navbar() {
     "/training-guide"
   ];
 
-  const hideNav = hidePages.includes(pathname);
-  const navClass = hideNav ? "hide-nav" : "";
+  // 🚨 Hide both navbar and bottom nav
+  if (hidePages.includes(pathname)) return null;
 
   return (
-    <div className={navClass}>
-      {/* 💻 Desktop Navbar */}
+    <>
       <nav className="navbar">
         <div className="nav-left">
           <img src="/assets/dog (2).png" alt="BreedLy Logo" className="logo-img" />
@@ -47,33 +45,25 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* 📱 Mobile Bottom Navigation */}
+      {/* 🌟 Bottom Mobile Nav (only when navbar shows) */}
       <div className="bottom-nav">
         <Link href="/" className={pathname === "/" ? "active-bottom" : ""}>
           <img src="/assets/icons/home.png" alt="Home" />
           <span>Home</span>
         </Link>
-
         <Link href="/breed-selector" className={pathname === "/breed-selector" ? "active-bottom" : ""}>
           <img src="/assets/icons/quiz.png" alt="Select" />
-          <span>Selector</span>
+          <span>Dog Selector</span>
         </Link>
-
         <Link href="/breeds" className={pathname === "/breeds" ? "active-bottom" : ""}>
           <img src="/assets/icons/info.png" alt="Breeds" />
           <span>Breeds</span>
         </Link>
-
         <Link href="/food-guide" className={pathname === "/food-guide" ? "active-bottom" : ""}>
           <img src="/assets/icons/food.png" alt="Food" />
           <span>Food</span>
         </Link>
-
-        <Link href="/login" className={pathname === "/login" ? "active-bottom" : ""}>
-          <img src="/assets/icons/profile.png" alt="Profile" />
-          <span>Profile</span>
-        </Link>
       </div>
-    </div>
+    </>
   );
 }

@@ -67,6 +67,56 @@ body {
 .hide-nav {
   display: none;
 }
+/* 📌 FIX HOME PAGE BREAKING ISSUE */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Prevent overlapping on page content */
+body,
+main {
+  padding-bottom: 80px; /* Space for bottom-nav */
+}
+
+/* Show bottom nav only on small screens */
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+/* Icons & text style */
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Active Link Style */
+.bottom-nav .active-bottom {
+  color: #ff6b00;
+  font-weight: 600;
+}
+
+.bottom-nav img {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 2px;
+}
+
 
 /* Navbar */
 /* Navbar container */
