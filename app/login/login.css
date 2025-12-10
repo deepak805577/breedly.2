@@ -199,8 +199,6 @@ form{
         width: 400px;
         margin-top: 0;
         margin-bottom: 200px;
-
-      
         
     }
 
@@ -283,9 +281,10 @@ form{
 
    
     .form-box {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .login{
+        padding-top: 10px;
         padding-bottom: 80px;
     }
     
@@ -297,6 +296,15 @@ form{
         height: 300px;
         margin-top: 26px;
         
+    }
+    .container.active .form-box.login{
+      visibility: hidden;
+      transition: 0.4s ease-in-out !important;
+    }
+    
+    .container .form-box.register{
+      visibility: hidden;
+      transition: 0.4s ease-in-out !important;
     }
     .toggle-panel {
         width: 100%;
