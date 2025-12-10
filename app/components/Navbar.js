@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Navbar() {
   const pathname = usePathname();
 
-  // Pages where the navbar should be hidden
+  // Pages where navbar should be hidden
   const hidePages = [
     "/breed-selector",
     "/results",
@@ -17,11 +17,11 @@ export default function Navbar() {
   ];
 
   const hideNav = hidePages.includes(pathname);
-
-  if (hideNav) return null; // Hide Navbar completely
+  const navClass = hideNav ? "hide-nav" : "";
 
   return (
-    <>
+    <div className={navClass}>
+      {/* 💻 Desktop Navbar */}
       <nav className="navbar">
         <div className="nav-left">
           <img src="/assets/dog (2).png" alt="BreedLy Logo" className="logo-img" />
@@ -47,7 +47,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* 🌟 Mobile Bottom Navigation */}
+      {/* 📱 Mobile Bottom Navigation */}
       <div className="bottom-nav">
         <Link href="/" className={pathname === "/" ? "active-bottom" : ""}>
           <img src="/assets/icons/home.png" alt="Home" />
@@ -56,7 +56,7 @@ export default function Navbar() {
 
         <Link href="/breed-selector" className={pathname === "/breed-selector" ? "active-bottom" : ""}>
           <img src="/assets/icons/quiz.png" alt="Select" />
-          <span>Dog Selector</span>
+          <span>Selector</span>
         </Link>
 
         <Link href="/breeds" className={pathname === "/breeds" ? "active-bottom" : ""}>
@@ -66,18 +66,14 @@ export default function Navbar() {
 
         <Link href="/food-guide" className={pathname === "/food-guide" ? "active-bottom" : ""}>
           <img src="/assets/icons/food.png" alt="Food" />
-          <span>Food Guide</span>
+          <span>Food</span>
         </Link>
 
-        <Link href="/login" className={pathname === "/health-guide" ? "active-bottom" : ""}>
-          <img src="/assets/icons/health.png" alt="Profile" />
+        <Link href="/login" className={pathname === "/login" ? "active-bottom" : ""}>
+          <img src="/assets/icons/profile.png" alt="Profile" />
           <span>Profile</span>
-          </Link>  
-        <Link href="/login" className={pathname === "/training-guide" ? "active-bottom" : ""}>
-          <img src="/assets/icons/training.png" alt="Profile" />
-          <span>Profile</span>  
         </Link>
       </div>
-    </>
+    </div>
   );
 }

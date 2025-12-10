@@ -64,6 +64,9 @@ body {
   font-weight: 600;
 }
 
+.hide-nav {
+  display: none;
+}
 
 /* Navbar */
 /* Navbar container */
