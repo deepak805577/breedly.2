@@ -5,6 +5,7 @@ import Link from "next/link";
 export default function Navbar() {
   const pathname = usePathname();
 
+  // Pages where the navbar should be hidden
   const hidePages = [
     "/breed-selector",
     "/results",
@@ -15,8 +16,9 @@ export default function Navbar() {
     "/training-guide"
   ];
 
-  // 🚨 Hide both navbar and bottom nav
-  if (hidePages.includes(pathname)) return null;
+  const hideNav = hidePages.includes(pathname);
+
+  if (hideNav) return null; // Hide Navbar completely
 
   return (
     <>
@@ -45,23 +47,35 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* 🌟 Bottom Mobile Nav (only when navbar shows) */}
+      {/* 🌟 Mobile Bottom Navigation */}
       <div className="bottom-nav">
         <Link href="/" className={pathname === "/" ? "active-bottom" : ""}>
           <img src="/assets/icons/home.png" alt="Home" />
           <span>Home</span>
         </Link>
+
         <Link href="/breed-selector" className={pathname === "/breed-selector" ? "active-bottom" : ""}>
           <img src="/assets/icons/quiz.png" alt="Select" />
           <span>Dog Selector</span>
         </Link>
+
         <Link href="/breeds" className={pathname === "/breeds" ? "active-bottom" : ""}>
           <img src="/assets/icons/info.png" alt="Breeds" />
           <span>Breeds</span>
         </Link>
+
         <Link href="/food-guide" className={pathname === "/food-guide" ? "active-bottom" : ""}>
           <img src="/assets/icons/food.png" alt="Food" />
-          <span>Food</span>
+          <span>Food Guide</span>
+        </Link>
+
+        <Link href="/login" className={pathname === "/health-guide" ? "active-bottom" : ""}>
+          <img src="/assets/icons/health.png" alt="Profile" />
+          <span>health Guide</span>
+          </Link>  
+        <Link href="/login" className={pathname === "/training-guide" ? "active-bottom" : ""}>
+          <img src="/assets/icons/training.png" alt="Profile" />
+          <span>Training Guide</span>  
         </Link>
       </div>
     </>
