@@ -8,11 +8,11 @@ export default function BreedDetailPage() {
   const breedName = decodeURIComponent(params.breed)
     .replace(/-/g, " ")
     .trim()
-    .toLowerCase();
-
-  const breed = breeds.find(
-    (b) => b.name.trim().toLowerCase() === breedName
-  );
+    .toLowerCase(); 
+     // ✔ Find in object instead of array
+  const breed = breeds[Object.keys(breeds).find(
+    (b) => b.trim().toLowerCase() === breedName
+  )];
 
   if (!breed) {
     return (

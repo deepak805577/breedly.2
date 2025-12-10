@@ -194,9 +194,12 @@ form{
 
     .container {
     
-         height: calc(100vh - 40px);
+        height: 75vh;
         border-radius: 30px;
-        margin:20px;
+        width: 400px;
+        margin-top: 0;
+        margin-bottom: 200px;
+
       
         
     }
@@ -211,8 +214,7 @@ form{
         padding: 20px;
         transition: 0.4s ease-in-out !important;
     }
-
-  
+   
     /* TOGGLE BACKGROUND CIRCLE */
     .toggle-box::before {
         left: 0;
@@ -248,10 +250,19 @@ form{
         left: 0;
         top: -30%;
     }
-
+    .toggle-right p{
+        font-weight: 500;
+        font-size: 12px;
+        padding: 1px;
+        padding-bottom: 8px;
+    }
+.toggle-right h1{
+    font-size:30px ;
+}
     .toggle-panel.toggle-right {
         bottom: -30%;
         right: 0;
+        
     }
     .container.active .toggle-panel.toggle-right {
         bottom: 0;
@@ -265,17 +276,33 @@ form{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 700px;
-        margin-top: 0;
+        height: 70vh;
         margin-bottom: 90px;
+        width: 350px;
     }
 
    
     .form-box {
-        padding: 18px;
-        
-
+        margin-bottom: 30px;
     }
+    .login{
+        padding-bottom: 80px;
+    }
+    
+    .toggle-panel.toggle-right{
+        height: auto;
+        padding-bottom: 15px;
+    }
+    .container.active .toggle-box::before{
+        height: 300px;
+        margin-top: 26px;
+        
+    }
+    .toggle-panel {
+        width: 100%;
+        transition: 0.4s ease-in-out !important;
+    }
+
     .form-box h1{
         font-size: 25px;
     }
@@ -283,13 +310,16 @@ form{
     .toggle-panel h1 {
         font-size: 20px;
     }
+    .toggle-panel p {
+        font-size: 11px;
+    }
     .toggle-box{
         text-align: center;
         
     }
        .toggle-box::before {
         left: 0;
-        top: -470px;
+        top: -410px;
         width: 100%;
         height: 100%;
         border-radius: 22vw;
